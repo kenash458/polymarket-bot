@@ -1,0 +1,27 @@
+# Polymarket Trading Bot - Dependencies
+
+# Core async
+asyncio-throttle==1.0.2
+
+# HTTP client (async)
+aiohttp==3.9.3
+
+# WebSocket
+websockets==12.0
+
+# Telegram Bot
+python-telegram-bot==21.3
+
+# Polymarket CLOB client (order signing, API auth)
+# pip install py-clob-client
+py-clob-client==0.18.0
+
+# Ethereum / signing
+web3==6.15.1
+eth-account==0.11.0
+
+# Environment
+python-dotenv==1.0.1
+
+# Utilities
+python-dateutil==2.9.0
