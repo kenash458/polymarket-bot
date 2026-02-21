@@ -25,7 +25,8 @@ from core.market_scanner import MarketScanner
 from core.trading_engine import TradingEngine
 from exchange.polymarket_client import PolymarketRESTClient
 from exchange.websocket_feed import PolymarketWebSocketFeed
-from telegram.bot import TelegramBot
+from telegram_bot.bot import TelegramBot
+from telegram import Update
 from utils.logger import get_logger
 
 logger = get_logger("main")
