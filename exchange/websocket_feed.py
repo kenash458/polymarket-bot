@@ -139,17 +139,13 @@ class PolymarketWebSocketFeed:
     # -------------------------------------------------------------------------
 
     async def _connection_loop(self):
+        """
+        Polymarket removed public market websocket.
+        This feed now acts as a placeholder so the bot can run using REST polling.
+        """
+        logger.warning("WebSocket disabled: Polymarket no longer provides public market WS feed.")
         while self._running:
-            try:
-                await self._connect_and_listen()
-                self._reconnect_attempts = 0  # Reset on clean disconnect
-            except Exception as e:
-                if not self._running:
-                    break
-                delay = min(self.reconnect_delay * (2 ** min(self._reconnect_attempts, 5)), 60)
-                self._reconnect_attempts += 1
-                logger.warning(f"WS disconnected ({e}), reconnecting in {delay:.1f}s (attempt {self._reconnect_attempts})")
-                await asyncio.sleep(delay)
+        await asyncio.sleep(60)
 
     async def _connect_and_listen(self):
         logger.info(f"Connecting to WebSocket: {self.ws_url}")
