@@ -145,7 +145,7 @@ class PolymarketWebSocketFeed:
         """
         logger.warning("WebSocket disabled: Polymarket no longer provides public market WS feed.")
         while self._running:
-        await asyncio.sleep(60)
+            await asyncio.sleep(60)
 
     async def _connect_and_listen(self):
         logger.info(f"Connecting to WebSocket: {self.ws_url}")
