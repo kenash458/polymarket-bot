@@ -17,9 +17,9 @@ python-telegram-bot==21.3
 py-clob-client==0.18.0
 
 # Ethereum / signing
-web3==6.15.1
+web3>=6.17.0
 eth-account>=0.13.0
-                 
+                             
 # Environment
 python-dotenv==1.0.1
 
